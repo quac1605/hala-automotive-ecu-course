@@ -28,9 +28,17 @@ int main(){
 	TIM_Config(TIM2);
 	GPIO_Config();
 	while(1){
-		if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_0) == 1){
+//		if(GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_0) == 1){
+//			GPIO_SetBits(GPIOC, GPIO_Pin_13);
+//			delay_ms(TIM2, 10000);
+//			GPIO_ResetBits(GPIOC, GPIO_Pin_13);
+//			delay_ms(TIM2, 10000);
+//		}  
+//		else GPIO_ResetBits(GPIOC, GPIO_Pin_13);
+//	}
 			GPIO_SetBits(GPIOC, GPIO_Pin_13);
-		}  
-		else GPIO_ResetBits(GPIOC, GPIO_Pin_13);
+			delay_ms(TIM2, 10000);
+			GPIO_ResetBits(GPIOC, GPIO_Pin_13);
+			delay_ms(TIM2, 10000);
 	}
 }
